@@ -7,27 +7,23 @@ public class ArraysExercise {
     }
 
     public void arrProcedure(){
-        int[] arr = new int[15];
-        int incrementNum = 1;
+        int[] array = new int[15];
         int summation = 0;
-        double avg = 0;
-        for (int i=0; i<arr.length; i++)
-        {
-            if(i!=0){
-                arr[i] = incrementNum*2;
-                incrementNum++;
-                summation += arr[i];
-                System.out.println(arr[i]);
+        int average = 0;
+        for(int i = 0; i < array.length; i++) {
+            if(i != 0){
+                array[i] = array[i - 1] * 2;
+                summation += array[i];
             }else{
-                arr[i] = incrementNum;
-                summation += arr[i];
-                System.out.println(arr[i]);
+                array[i] = 1;
+                summation += array[i];
             }
         }
 
-        avg = summation/arr.length;
-        System.out.println("sum:"+summation);
-        System.out.println("avg:"+avg);
+        average = summation / array.length;
+        System.out.println("The array is: " + Arrays.toString(array));
+        System.out.println("The summation is: " + summation);
+        System.out.println("The average is: " + average);
 
     }
 }
